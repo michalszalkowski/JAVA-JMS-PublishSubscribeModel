@@ -19,10 +19,12 @@ public class Subscriber implements MessageListener {
 			Topic chatTopic = (Topic) ctx.lookup(topicName);
 
 			TopicConnection topicConnection = connectionFactory.createTopicConnection();
+//			topicConnection.setClientID("2");
 
 			TopicSession subscriberSession = topicConnection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			TopicSubscriber subscriber = subscriberSession.createSubscriber(chatTopic, null, true);
+//			TopicSubscriber subscriber = subscriberSession.createDurableSubscriber(chatTopic, "Subscriber1");
 
 			subscriber.setMessageListener(this);
 

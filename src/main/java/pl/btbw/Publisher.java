@@ -1,6 +1,5 @@
 package pl.btbw;
 
-
 import javax.jms.*;
 import javax.naming.InitialContext;
 import java.io.BufferedReader;
